@@ -103,6 +103,8 @@ input.answer.bad{border-color:var(--bad);background:var(--bad-bg)}
 .slots{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin:18px 0 6px;min-height:48px}
 .slot{width:34px;height:44px;border-bottom:3px solid var(--line);font-family:var(--display);font-weight:800;font-size:1.5rem;display:flex;align-items:center;justify-content:center}
 .slot.f{border-color:var(--aqua)}
+.slots.long{gap:4px}
+.slots.long .slot{width:22px;font-size:1.15rem}
 .slots.ok .slot{color:var(--good);border-color:var(--good)}
 .slots.bad{animation:shake .35s}
 .tiles{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:14px}
@@ -418,7 +420,7 @@ function rKort(){
   else { front = '<div class="big-word sv-word">' + esc(w.sv) + '</div>'; back = '<div class="big-word">' + esc(w.en) + '</div>'; }
   var html = '<div class="dirs"><button class="' + (G.dir === 'en' ? 'on' : '') + '" data-act="dir" data-arg="en">Engelska först</button><button class="' + (G.dir === 'sv' ? 'on' : '') + '" data-act="dir" data-arg="sv">Svenska först</button></div>';
   if (!G.flipped) {
-    html += '<button class="flip" data-act="flip"><div class="label">' + (G.dir === 'en' ? 'Vad betyder' : 'Vad heter på engelska') + '</div>' + front + '<span class="hint">Tänk på svaret och tryck för att vända</span></button>';
+    html += '<button class="flip" data-act="flip"><div class="label">' + (G.dir === 'en' ? 'Vad betyder' : 'Vad heter det på engelska') + '</div>' + front + '<span class="hint">Tänk på svaret och tryck för att vända</span></button>';
     if (G.dir === 'en') html += '<div class="center" style="margin-top:12px">' + speakBtn(w.en) + '</div>';
   } else {
     html += '<div class="label">' + (G.dir === 'en' ? esc(w.en) : esc(w.sv)) + '</div>' + back +
@@ -463,7 +465,7 @@ function rQuiz(){
     G.pick = -1;
   }
   var field = G.qdir === 'en' ? 'sv' : 'en';
-  var html = '<div class="label">' + (G.qdir === 'en' ? 'Vad betyder' : 'Vad heter på engelska') + '</div>' +
+  var html = '<div class="label">' + (G.qdir === 'en' ? 'Vad betyder' : 'Vad heter det på engelska') + '</div>' +
     '<div class="big-word' + (G.qdir === 'sv' ? ' sv-word' : '') + '">' + esc(G.qdir === 'en' ? w.en : w.sv) + '</div>' +
     (G.qdir === 'en' ? '<div class="center">' + speakBtn(w.en) + '</div>' : '') + '<div class="opts">';
   G.opts.forEach(function(o, i){
@@ -527,7 +529,7 @@ function rPussel(){
   }
   var target = w.en.toLowerCase();
   var html = '<div class="label">Bygg ordet för</div><div class="big-word sv-word">' + esc(w.sv) + '</div>' +
-    '<div class="slots' + (G.solved ? ' ok' : '') + (G.shake ? ' bad' : '') + '">';
+    '<div class="slots' + (target.length > 8 ? ' long' : '') + (G.solved ? ' ok' : '') + (G.shake ? ' bad' : '') + '">';
   for (var i = 0; i < target.length; i++) {
     var ch = G.built[i] != null ? G.letters[G.built[i]] : '';
     html += '<span class="slot' + (ch ? ' f' : '') + '">' + esc(ch === ' ' ? '␣' : ch) + '</span>';
@@ -587,7 +589,7 @@ function rType(){
     html = '<div class="label">Skriv på engelska</div><div class="big-word sv-word">' + esc(w.sv) + '</div>';
   }
   var done = G.state === 'ok' || G.state === 'bad';
-  html += '<input class="answer' + (G.state === 'ok' ? ' ok' : G.state === 'bad' ? ' bad' : '') + '" id="ans" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" enterkeyhint="done" value="' + esc(G.val) + '"' + (done ? ' readonly' : '') + ' placeholder="Skriv här">';
+  html += '<input class="answer' + (G.state === 'ok' ? ' ok' : G.state === 'bad' ? ' bad' : '') + '" id="ans" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" enterkeyhint="done" value="' + esc(G.val) + '" placeholder="Skriv här">';
   if (G.state === 'ok') html += '<div class="feedback ok">Rätt! ' + (dikt ? esc(w.en) + ' betyder ' + esc(w.sv) + '.' : '') + '</div>';
   else if (G.state === 'near') html += '<div class="feedback meh">Nästan! Kolla stavningen och försök igen.</div>';
   else if (G.state === 'bad') html += '<div class="feedback bad">Rätt svar: <span class="ans">' + esc(w.en) + '</span>' + (dikt ? ' (' + esc(w.sv) + ')' : '') + (w.tip ? '<div class="tip">' + esc(w.tip) + '</div>' : '') + '</div>';
@@ -598,8 +600,7 @@ function rType(){
   }
   frame(html);
   var inp = document.getElementById('ans');
-  if (inp && !done) { try { inp.focus({ preventScroll:true }); } catch(e){ inp.focus(); } }
-  if (G.state === 'ok') later(next, 1100);
+  if (inp) { try { inp.focus({ preventScroll:true }); } catch(e){ inp.focus(); } try { inp.setSelectionRange(inp.value.length, inp.value.length); } catch(e){} }
 }
 function typeCheck(){
   var w = G.list[G.i], inp = document.getElementById('ans');
@@ -630,7 +631,7 @@ function rLucka(){
   var w = G.list[G.i], m = blankRe(w).exec(w.ex);
   if (G.qi !== G.i) { G.qi = G.i; G.answered = false; G.pick = -1; G.opts = shuffle([w].concat(distractors(w, 'en', 3, true))); }
   var sent = esc(w.ex.slice(0, m.index)) + (G.answered ? '<b style="color:var(--aqua-d)">' + esc(m[0]) + '</b>' : '<span class="blank">&nbsp;</span>') + esc(w.ex.slice(m.index + m[0].length));
-  var html = '<div class="label">Vilket ord saknas?</div><div class="sentence">' + sent + '</div><div class="opts">';
+  var html = '<div class="label">Vilket ord saknas?</div><div class="sentence">' + sent + '</div>' + (!G.answered && m[0].toLowerCase() !== w.en.toLowerCase() ? '<div class="tip center">Ordet har en ändelse i meningen, välj grundformen.</div>' : '') + '<div class="opts">';
   G.opts.forEach(function(o, i){
     var cls = '';
     if (G.answered) { if (o === w) cls = ' ok'; else if (i === G.pick) cls = ' bad'; }
