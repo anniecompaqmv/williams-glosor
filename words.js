@@ -6,7 +6,7 @@
    Vecka: text (läsförståelse), fragor (frågor på engelska), skriv (skrivuppgift), prata (påståenden). */
 window.GLOSOR = [
   {
-    namn: 'Vecka 46',
+    namn: 'Vecka 47',
     ord: [
       {en:'beneficial', sv:'fördelaktig', typ:'adj', ex:'Regular exercise is beneficial for your health.', exSv:'Regelbunden träning är bra för din hälsa.', tip:'be · ne · fi · cial. Slutet cial uttalas som "schäl".', familj:'benefit (fördel, nytta)', fras:'be beneficial for', frasSv:'vara bra för'},
       {en:'conclude', sv:'avsluta', typ:'verb', ex:'The teacher concluded the lesson with a short quiz.', exSv:'Läraren avslutade lektionen med ett kort förhör.', tip:'con · clude. Slutar på ett e som inte hörs.', former:'concluded, concluding', familj:'conclusion (slutsats, avslutning)', fras:'to conclude', frasSv:'för att avsluta, sammanfattningsvis'},
@@ -62,7 +62,7 @@ window.GLOSOR = [
     ]
   },
   {
-    namn: 'Vecka 47',
+    namn: 'Vecka 48',
     ord: [
       {en:'meadow', sv:'glänta, öppning i skogen, äng', typ:'subst', ex:'We had a picnic in the meadow.', exSv:'Vi hade picknick på ängen.', tip:'mea · dow. ea låter som e, och ordet slutar på ow. Samma ord på amerikansk och brittisk engelska.', fras:'a flower meadow', frasSv:'en blomsteräng'},
       {en:'lizard', sv:'ödla', typ:'subst', ex:'A small lizard was sitting on a warm stone.', exSv:'En liten ödla satt på en varm sten.', tip:'li · zard. Med z, inte s. Samma ord på amerikansk och brittisk engelska.'},
