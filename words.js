@@ -63,68 +63,57 @@ window.GLOSOR = [
   },
   {
     namn: 'Vecka 48',
+    uttal: 'en-US',
     ord: [
-      {en:'meadow', sv:'glänta, öppning i skogen, äng', typ:'subst', ex:'We had a picnic in the meadow.', exSv:'Vi hade picknick på ängen.', tip:'mea · dow. ea låter som e, och ordet slutar på ow. Samma ord på amerikansk och brittisk engelska.', fras:'a flower meadow', frasSv:'en blomsteräng'},
-      {en:'lizard', sv:'ödla', typ:'subst', ex:'A small lizard was sitting on a warm stone.', exSv:'En liten ödla satt på en varm sten.', tip:'li · zard. Med z, inte s. Samma ord på amerikansk och brittisk engelska.'},
-      {en:'continue', sv:'fortsätta, fortsätt', typ:'verb', ex:'Let’s continue after lunch.', exSv:'Vi fortsätter efter lunch.', tip:'con · tin · ue. Slutar på ue. Samma ord på amerikansk och brittisk engelska.', former:'continued, continuing', fras:'To be continued.', frasSv:'Fortsättning följer.'},
-      {en:'shoulder', sv:'axel (kroppsdel)', alt:['axel','axeln'], typ:'subst', ex:'My shoulder hurts after swimming.', exSv:'Min axel gör ont efter simningen.', tip:'shoul · der. ou uttalas som o i go. Glöm inte u:et när du stavar. Samma ord på amerikansk och brittisk engelska.', fras:'shoulder to shoulder', frasSv:'sida vid sida'},
-      {en:'sidewalk', sv:'trottoar (amerikanska)', alt:['trottoar','trottoaren'], typ:'subst', ex:'Please walk on the sidewalk, not in the street.', exSv:'Gå på trottoaren, inte i gatan.', tip:'side + walk, alltså sidan där man går. Brittiska: pavement.'},
-      {en:'pavement', sv:'trottoar (brittiska)', alt:['trottoar','trottoaren'], typ:'subst', ex:'The pavement was wet after the rain.', exSv:'Trottoaren var blöt efter regnet.', tip:'pave · ment. Amerikanska: sidewalk.'},
-      {en:'crosswalk', sv:'övergångsställe (amerikanska)', alt:['övergångsställe','övergångsstället'], typ:'subst', ex:'Always cross the street at the crosswalk.', exSv:'Gå alltid över gatan vid övergångsstället.', tip:'cross + walk, ett ord. Brittiska: zebra crossing.'},
-      {en:'zebra crossing', sv:'övergångsställe (brittiska)', alt:['övergångsställe','övergångsstället'], typ:'subst', ex:'The cars stopped at the zebra crossing.', exSv:'Bilarna stannade vid övergångsstället.', tip:'Två ord. De vita ränderna ser ut som en zebra. Amerikanska: crosswalk.'},
-      {en:'flavor', sv:'smak (amerikanska)', alt:['smak','smaken'], typ:'subst', ex:'What is your favorite ice cream flavor?', exSv:'Vilken är din favoritsmak på glass?', tip:'fla · vor. Amerikansk stavning utan u. Brittiska: flavour.'},
-      {en:'flavour', sv:'smak (brittiska)', alt:['smak','smaken'], typ:'subst', ex:'This soup has a lot of flavour.', exSv:'Den här soppan har mycket smak.', tip:'fla · vour. Brittisk stavning med ou, precis som colour och favourite. Amerikanska: flavor.'},
-      {en:'fall', sv:'höst (amerikanska)', alt:['höst','hösten'], typ:'subst', ex:'The leaves turn red and yellow in the fall.', exSv:'Löven blir röda och gula på hösten.', tip:'Samma ord som falla, eftersom löven faller på hösten. Brittiska: autumn.'},
-      {en:'autumn', sv:'höst (brittiska)', alt:['höst','hösten'], typ:'subst', ex:'In autumn it gets dark early in the evening.', exSv:'På hösten blir det mörkt tidigt på kvällen.', tip:'au · tumn. n:et i slutet hörs inte. Amerikanska: fall.'},
-      {en:'truck', sv:'lastbil (amerikanska)', alt:['lastbil','lastbilen'], typ:'subst', ex:'A big truck was parked outside the shop.', exSv:'En stor lastbil stod parkerad utanför affären.', tip:'Slutar på ck. Brittiska: lorry.'},
-      {en:'lorry', sv:'lastbil (brittiska)', alt:['lastbil','lastbilen'], typ:'subst', ex:'The lorry was full of wood.', exSv:'Lastbilen var full med ved.', tip:'lor · ry. Dubbelt r. Amerikanska: truck.'},
-      {en:'apartment', sv:'lägenhet (amerikanska)', alt:['lägenhet','lägenheten'], typ:'subst', ex:'They live in an apartment on the fifth floor.', exSv:'De bor i en lägenhet på femte våningen.', tip:'a · part · ment. Bara ett p! Brittiska: flat.'},
-      {en:'flat', sv:'lägenhet (brittiska)', alt:['lägenhet','lägenheten'], typ:'subst', ex:'My cousin has a small flat in London.', exSv:'Min kusin har en liten lägenhet i London.', tip:'Flat betyder också platt. Amerikanska: apartment.'},
-      {en:'pants', sv:'byxor (amerikanska)', alt:['byxor','byxa','byxorna'], typ:'subst', ex:'He spilled juice on his pants.', exSv:'Han spillde juice på byxorna.', tip:'Akta dig! I Storbritannien betyder pants underbyxor. Brittiska för byxor: trousers.'},
-      {en:'trousers', sv:'byxor (brittiska)', alt:['byxor','byxa','byxorna'], typ:'subst', ex:'I need new trousers for school.', exSv:'Jag behöver nya byxor till skolan.', tip:'trou · sers. ou som i house. Alltid plural: a pair of trousers. Amerikanska: pants.'},
-      {en:'eraser', sv:'sudd (amerikanska)', alt:['sudd','suddgummi','suddet'], typ:'subst', ex:'Can I borrow your eraser?', exSv:'Får jag låna ditt sudd?', tip:'e · ras · er. Kommer från erase, sudda ut. Brittiska: rubber.'},
-      {en:'rubber', sv:'sudd (brittiska)', alt:['sudd','suddgummi','suddet'], typ:'subst', ex:'I made a mistake, so I used my rubber.', exSv:'Jag gjorde fel, så jag använde mitt sudd.', tip:'rub · ber. Dubbelt b. Rubber betyder också gummi. Amerikanska: eraser.'},
-      {en:'cookie', sv:'kaka (amerikanska)', alt:['kaka','kakan','kex'], typ:'subst', ex:'She baked chocolate chip cookies.', exSv:'Hon bakade kakor med chokladbitar.', tip:'coo · kie. Slutar på ie. Brittiska: biscuit.'},
-      {en:'biscuit', sv:'kaka (brittiska)', alt:['kaka','kakan','kex'], typ:'subst', ex:'Would you like a biscuit with your tea?', exSv:'Vill du ha en kaka till teet?', tip:'bis · cuit. Uttalas ungefär "biskit", u:et hörs inte. Amerikanska: cookie.'},
-      {en:'closet', sv:'garderob (amerikanska)', alt:['garderob','garderoben'], typ:'subst', ex:'My clothes are in the closet.', exSv:'Mina kläder ligger i garderoben.', tip:'clo · set. Slutar på et. Brittiska: wardrobe.'},
-      {en:'wardrobe', sv:'garderob (brittiska)', alt:['garderob','garderoben'], typ:'subst', ex:'There is a big wardrobe in my bedroom.', exSv:'Det finns en stor garderob i mitt sovrum.', tip:'ward + robe. Amerikanska: closet.'}
+      {en:'meadow', sv:'glänta, öppning i skogen, äng', typ:'subst', ex:'We had a picnic in the meadow.', exSv:'Vi hade picknick på ängen.', tip:'mea · dow. ea låter som e, och ordet slutar på ow.', fras:'a flower meadow', frasSv:'en blomsteräng'},
+      {en:'lizard', sv:'ödla', typ:'subst', ex:'A small lizard was sitting on a warm stone.', exSv:'En liten ödla satt på en varm sten.', tip:'li · zard. Med z, inte s.'},
+      {en:'continue', sv:'fortsätta, fortsätt', typ:'verb', ex:'Let’s continue after lunch.', exSv:'Vi fortsätter efter lunch.', tip:'con · tin · ue. Slutar på ue.', former:'continued, continuing', fras:'To be continued.', frasSv:'Fortsättning följer.'},
+      {en:'shoulder', sv:'axel (kroppsdel)', alt:['axel','axeln'], typ:'subst', ex:'My shoulder hurts after swimming.', exSv:'Min axel gör ont efter simningen.', tip:'shoul · der. ou uttalas som o i go. Glöm inte u:et när du stavar.', fras:'shoulder to shoulder', frasSv:'sida vid sida'},
+      {en:'sidewalk', sv:'trottoar', alt:['trottoaren'], typ:'subst', ex:'Please walk on the sidewalk, not in the street.', exSv:'Gå på trottoaren, inte i gatan.', tip:'side + walk, ett ord. Sidan där man går.'},
+      {en:'crosswalk', sv:'övergångsställe', alt:['övergångsstället'], typ:'subst', ex:'Always cross the street at the crosswalk.', exSv:'Gå alltid över gatan vid övergångsstället.', tip:'cross + walk, ett ord. Där man går över gatan.'},
+      {en:'flavor', sv:'smak', alt:['smaken'], typ:'subst', ex:'What is your favorite ice cream flavor?', exSv:'Vilken är din favoritsmak på glass?', tip:'fla · vor. Amerikansk stavning: slutar på or, utan u.'},
+      {en:'fall', sv:'höst', alt:['hösten'], typ:'subst', ex:'The leaves turn red and yellow in the fall.', exSv:'Löven blir röda och gula på hösten.', tip:'Samma ord som falla, eftersom löven faller på hösten. Dubbelt l.'},
+      {en:'truck', sv:'lastbil', alt:['lastbilen'], typ:'subst', ex:'A big truck was parked outside the store.', exSv:'En stor lastbil stod parkerad utanför affären.', tip:'Slutar på ck.'},
+      {en:'apartment', sv:'lägenhet', alt:['lägenheten'], typ:'subst', ex:'They live in an apartment on the fifth floor.', exSv:'De bor i en lägenhet på femte våningen.', tip:'a · part · ment. Bara ett p!'},
+      {en:'pants', sv:'byxor', alt:['byxa','byxorna'], typ:'subst', ex:'He spilled juice on his pants.', exSv:'Han spillde juice på byxorna.', tip:'Alltid plural: a pair of pants.'},
+      {en:'eraser', sv:'sudd', alt:['suddgummi','suddet'], typ:'subst', ex:'Can I borrow your eraser?', exSv:'Får jag låna ditt sudd?', tip:'e · ras · er. Kommer från erase, sudda ut.'},
+      {en:'cookie', sv:'kaka', alt:['kakan','kex'], typ:'subst', ex:'She baked chocolate chip cookies.', exSv:'Hon bakade kakor med chokladbitar.', tip:'coo · kie. Dubbelt o, och slutar på ie.'},
+      {en:'closet', sv:'garderob', alt:['garderoben'], typ:'subst', ex:'My clothes are in the closet.', exSv:'Mina kläder ligger i garderoben.', tip:'clo · set. Slutar på et.'}
     ],
     text: {
-      titel: 'Ella Visits London',
+      titel: 'A Fall Day in Chicago',
       body: [
-        'In the fall, Ella flew from New York to London to visit her cousin Oliver. Oliver laughed when she said fall. “Here in Britain we say autumn,” he said.',
-        'Oliver’s family lives in a flat near a big park. At home in New York, Ella lives in an apartment on the tenth floor.',
-        'On Saturday they walked to the park. “Stay on the pavement!” said Oliver. Ella smiled. “In America we call it the sidewalk.” They crossed the busy road at a zebra crossing, and a big red lorry stopped for them. “Look, a truck!” said Ella. “No, a lorry,” said Oliver.',
-        'In the park there was a meadow with tall grass. Ella saw a small lizard on a warm stone, but it ran away into the grass. Oliver carried a bag on his shoulder with tea and biscuits. “Do you want a biscuit?” he asked. “Oh, a cookie! Yes, please,” said Ella.',
-        'When they got home, Ella had grass all over her pants. “Oh dear, your trousers!” said Oliver’s mum. Ella put her jacket in the wardrobe. In America she would call it a closet.',
-        'In the evening they drew a map of the park. Ella made a mistake and asked for an eraser, and Oliver gave her a rubber. Then they had ice cream. Ella’s favorite flavor was strawberry, but Oliver’s favourite flavour was chocolate. “Let’s continue our adventure tomorrow,” said Oliver.'
+        'It was a cold day in the fall. Maya and her brother Leo live in an apartment on the tenth floor in Chicago.',
+        'On Saturday they went out to play. “Stay on the sidewalk!” said Maya. They waited at the crosswalk, and a big red truck stopped for them.',
+        'Behind the park there was a meadow with tall grass. Leo saw a small lizard on a warm stone, but it ran away into the grass. Maya carried a bag on her shoulder with water and cookies.',
+        'When they got home, Leo had grass all over his pants. “Oh no, your pants!” said Mom. Leo put his jacket in the closet.',
+        'In the evening they drew a map of the meadow. Leo made a mistake and asked for an eraser. Then they had ice cream. Maya’s favorite flavor was strawberry, but Leo’s favorite flavor was chocolate. “Let’s continue our adventure tomorrow,” said Maya.'
       ]
     },
     fragor: [
-      {q:'Where does Ella live?', alt:['In London','In New York','In a meadow','In Oliver’s flat'], ratt:1},
-      {q:'What does Oliver call the season when Ella visits?', alt:['Fall','Summer','Autumn','Spring'], ratt:2, forklaring:'Autumn är brittiska för höst. På amerikanska säger man fall.'},
-      {q:'Where is Oliver’s flat?', alt:['Near a big park','On the tenth floor','In New York','Next to a school'], ratt:0, forklaring:'Det är Ellas lägenhet i New York som ligger på tionde våningen.'},
-      {q:'What stopped for them at the zebra crossing?', alt:['A bus','A bike','A lorry','A taxi'], ratt:2, forklaring:'Lorry är brittiska för lastbil. Ella säger truck.'},
-      {q:'What happened to the lizard?', alt:['Ella picked it up','It ran away into the grass','It sat on Oliver’s shoulder','It ate a biscuit'], ratt:1},
-      {q:'What did Oliver carry on his shoulder?', alt:['A map','A bag with tea and biscuits','His jacket','Ella’s eraser'], ratt:1},
-      {q:'Ella says sidewalk. What does Oliver say? Answer in English.', godkann:['pavement','the pavement','he says pavement'], facit:'He says pavement.'},
-      {q:'Why did Oliver’s mum say “Oh dear, your trousers!”?', alt:['They were too small','They had grass on them','They were new','They were in the wardrobe'], ratt:1},
-      {q:'What was Oliver’s favourite flavour?', alt:['Strawberry','Vanilla','Chocolate','Lemon'], ratt:2, forklaring:'Strawberry var Ellas favorit.'}
+      {q:'Where do Maya and Leo live?', alt:['In a house in the country','In an apartment in Chicago','In a meadow','In New York'], ratt:1},
+      {q:'What season is it in the story?', alt:['Spring','Summer','Fall','Winter'], ratt:2, forklaring:'Fall betyder höst.'},
+      {q:'What stopped for them at the crosswalk?', alt:['A bus','A bike','A truck','A taxi'], ratt:2, forklaring:'Truck betyder lastbil.'},
+      {q:'What happened to the lizard?', alt:['Leo picked it up','It ran away into the grass','It sat on Maya’s shoulder','It ate a cookie'], ratt:1},
+      {q:'What did Maya carry on her shoulder?', alt:['A map','A bag with water and cookies','Her jacket','Leo’s eraser'], ratt:1},
+      {q:'Where should they walk, according to Maya? Answer in English.', godkann:['sidewalk','the sidewalk','on the sidewalk','stay on the sidewalk'], facit:'On the sidewalk.'},
+      {q:'Why did Mom say “Oh no, your pants!”?', alt:['They were too small','They had grass on them','They were new','They were in the closet'], ratt:1},
+      {q:'What was Leo’s favorite flavor?', alt:['Strawberry','Vanilla','Chocolate','Lemon'], ratt:2, forklaring:'Strawberry var Mayas favorit.'}
     ],
     skriv: {
-      titel: 'Autumn Where I Live',
+      titel: 'Fall Where I Live',
       mottagare: 'a pen pal in the USA',
-      stod: ['What is autumn like where you live? Do you say fall or autumn?','What do you see when you walk on the pavement or in a meadow?','What do you like to do in autumn?','What is your favourite flavour of something warm to eat or drink?','Use at least one British and one American word, and explain the difference.']
+      stod: ['What is the fall like where you live?','What do you see when you walk on the sidewalk or in a meadow?','What do you like to do in the fall?','What is your favorite flavor of ice cream or cookies?','Do you live in a house or an apartment? Describe it.']
     },
     prata: [
-      'Describe your way to school. Use the words pavement, zebra crossing and lorry.',
-      'Would you rather live in a flat in a big city or in a house in the countryside? Why?',
-      'Tell your partner about your favourite ice cream flavour.',
-      'Is autumn a good or a bad season? Give two reasons.',
-      'What is in your wardrobe? Describe three things.',
+      'Describe your way to school. Use the words sidewalk, crosswalk and truck.',
+      'Would you rather live in an apartment in a big city or in a house in the countryside? Why?',
+      'Tell your partner about your favorite ice cream flavor.',
+      'Is the fall a good or a bad season? Give two reasons.',
+      'What is in your closet? Describe three things.',
       'Have you ever seen a lizard? Where?',
-      'Explain to a friend from the USA what a biscuit and a rubber are in British English.',
-      'Which do you like best, British or American English? Why?'
+      'What kind of cookies do you like best? Why?',
+      'What do you have in your pencil case? Do you have an eraser?'
     ]
   }
 ];

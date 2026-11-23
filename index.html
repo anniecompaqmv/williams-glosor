@@ -306,15 +306,20 @@ function checkSv(w, ans){
 function blankRe(w){ return new RegExp('\\b(' + w.en.replace(/[.*+?^\x24{}()|[\]\\]/g, '\\$&') + '\\w*)\\b', 'i'); }
 
 /* ---------- Uppläsning ---------- */
-var voice = null;
+var voice = null, voiceUS = null;
 function pickVoice(){
   try {
     var vs = speechSynthesis.getVoices();
     voice = vs.filter(function(v){ return v.lang === 'en-GB' && /Daniel|Kate|Serena|Arthur|Martha|Google UK/i.test(v.name); })[0]
       || vs.filter(function(v){ return /^en[-_]GB/i.test(v.lang); })[0]
       || vs.filter(function(v){ return /^en/i.test(v.lang); })[0] || null;
-  } catch(e){ voice = null; }
+    voiceUS = vs.filter(function(v){ return /^en[-_]US/i.test(v.lang) && /Samantha|Alex|Allison|Ava|Google US/i.test(v.name); })[0]
+      || vs.filter(function(v){ return /^en[-_]US/i.test(v.lang); })[0] || voice;
+  } catch(e){ voice = null; voiceUS = null; }
 }
+/* Veckor kan ha uttal:'en-US' för amerikansk uppläsning */
+function accent(){ var wk = (typeof G !== 'undefined' && G && G.week) || (typeof curWeek === 'function' ? curWeek() : null); return (wk && wk.uttal === 'en-US') ? 'en-US' : 'en-GB'; }
+function setVoice(u){ var a = accent(); u.lang = a; var v = a === 'en-US' ? voiceUS : voice; if (v) u.voice = v; }
 var canSpeak = 'speechSynthesis' in window;
 if (canSpeak) { pickVoice(); try { speechSynthesis.onvoiceschanged = pickVoice; } catch(e){} }
 function say(text, slow){
@@ -322,7 +327,7 @@ function say(text, slow){
   try {
     speechSynthesis.cancel();
     var u = new SpeechSynthesisUtterance(text);
-    u.lang = 'en-GB'; if (voice) u.voice = voice;
+    setVoice(u);
     u.rate = slow ? 0.6 : 0.9;
     speechSynthesis.speak(u);
   } catch(e){}
@@ -779,7 +784,7 @@ function sayAll(parts){
     parts.forEach(function(p){
       (String(p).match(/[^.!?]+[.!?]+["’”]?|[^.!?]+$/g) || [p]).forEach(function(s){
         if (!s.trim()) return;
-        var u = new SpeechSynthesisUtterance(s.trim()); u.lang = 'en-GB'; if (voice) u.voice = voice; u.rate = 0.9; speechSynthesis.speak(u);
+        var u = new SpeechSynthesisUtterance(s.trim()); setVoice(u); u.rate = 0.9; speechSynthesis.speak(u);
       });
     });
   } catch(e){}
